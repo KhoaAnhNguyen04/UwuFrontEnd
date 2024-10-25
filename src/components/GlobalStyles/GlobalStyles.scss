@@ -1,18 +1,24 @@
-@import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import "normalize.css";
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+  margin: 0px;
 }
 
 :root {
-    --primary: #fe2c55;
+  --main-green: #263d0f;
+  --sx-height: 48px;
+  --s_sx-height: 24px;
+  --small-font_size: 16px;
+  --small-weight: 500;
 }
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    text-rendering: optimizespeed;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
 }
