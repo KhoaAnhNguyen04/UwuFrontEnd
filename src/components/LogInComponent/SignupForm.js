@@ -6,7 +6,7 @@ import {
   SubmitButton,
 } from "./LoginForm.style";
 
-const LoginForm = () => {
+const SignupForm = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -27,8 +27,8 @@ const LoginForm = () => {
     <FormContainer>
       <StyledBox>
         <div>
-          <h3>Login</h3>
-          <p>The most innovative reading platform</p>
+          <h3>Sign up</h3>
+          <p>Sign up for purchasing our membership</p>
         </div>
         <form onSubmit={handleSubmit}>
           <InputField
@@ -37,6 +37,16 @@ const LoginForm = () => {
             value={formData.username}
             onChange={handleChange}
             fullWidth
+            required
+          />
+          <InputField
+            label="Email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            fullWidth
+            required
           />
           <InputField
             label="Password"
@@ -45,12 +55,14 @@ const LoginForm = () => {
             value={formData.password}
             onChange={handleChange}
             fullWidth
+            required
           />
           <SubmitButton type="submit" fullWidth variant="contained">
             Submit
           </SubmitButton>
           <div>
-            <a href="/"> Forgotten Password?</a>
+            Already have an account?
+            <a href="/login"> Log in</a>
           </div>
         </form>
       </StyledBox>
@@ -58,4 +70,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignupForm;

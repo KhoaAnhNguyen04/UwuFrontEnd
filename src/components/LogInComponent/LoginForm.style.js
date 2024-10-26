@@ -11,23 +11,32 @@ export const FormContainer = styled.div`
   height: 100vh;
 
   color: var(--white-text);
-  h3 {
-    align-self: center;
+  div {
   }
 `;
 export const InputField = styled(TextField)`
   && {
     label {
       color: var(--white-text);
+      padding-top: 4px;
     }
     fieldset {
       border-color: var(--white-text);
+      border-radius: 16px;
+    }
+    input {
+      color: var(--white-text);
+      font-size: var(--small-font_size);
+      &::placeholder {
+        font-size: 16px !important;
+      }
     }
 
     .Mui-focused {
       color: var(--white-text);
       .MuiOutlinedInput-notchedOutline {
         border-color: var(--white-text);
+        color: var(--white-text);
       }
     }
     .MuiOutlinedInput-root {
@@ -44,7 +53,7 @@ export const StyledBox = styled(Box)`
     flex-direction: column;
     gap: 20px;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: var(--black-color-effect);
     backdrop-filter: blur(20px);
     form {
@@ -53,17 +62,38 @@ export const StyledBox = styled(Box)`
       gap: 20px;
       flex-direction: column;
     }
+    :first-child {
+      h3,
+      p {
+        margin: 0px auto;
+        width: fit-content;
+      }
+      h3 {
+        font-size: var(--label-font_size);
+      }
+    }
+    :last-child {
+      color: var(--white-text);
+      font-size: var(--small-font_size);
+      text-align: center;
+      a {
+        color: var(--green-contrast);
+        font-weight: bold;
+        text-decoration: none;
+        margin-left: 5px;
+      }
+    }
   }
 `;
 
 export const SubmitButton = styled(Button)`
   && {
-    margin-top: 0px;
     border-radius: 28px;
-    background-color: var(--main-green);
-
+    background-color: var(--green-contrast);
+    font-size: var(--small-font_size);
     color: white;
     height: 48px;
+    text-transform: "none" !important;
     &:hover {
       background-color: var(--brighter-green);
     }
