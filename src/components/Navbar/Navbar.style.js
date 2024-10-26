@@ -2,6 +2,7 @@ import { TextField } from "@mui/material";
 import styled from "styled-components";
 export const NavbarContainer = styled.div`
   background: linear-gradient(180deg, rgba(18, 18, 20, 0.68), transparent);
+  position: fixed;
   display: flex;
   justify-content: space-between;
   width: 100%;

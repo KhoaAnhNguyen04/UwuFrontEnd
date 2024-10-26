@@ -1,7 +1,5 @@
-const routes = [
-  //   { path: "/", component: Dashboard },
-  // { path: '/printerPage', component: PrinterPage },
-  // { path: '/studentPage', component: StudentPage, layout: null },
-];
+import LoginForm from "../components/LogInComponent/LoginForm";
+
+const routes = [{ path: "/", component: LoginForm }];
 
 export { routes };
