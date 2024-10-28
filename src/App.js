@@ -1,11 +1,12 @@
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 import { Fragment } from "react";
 import Navbar from "./components/Navbar/Navbar";
+
 function App() {
   return (
-    <div className="app" style={{ backgroundColor: "#121214" }}>
-      <Navbar></Navbar>
+    <div className="app">
+      <Navbar />
       <Routes>
         {routes.map((route, index) => {
           const Layout = route.layout ? route.layout : Fragment;
