@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
-    <div className="app">
+    <div className="app" style={{ backgroundColor: "#121214" }}>
       <Navbar></Navbar>
       <Routes>
         {routes.map((route, index) => {

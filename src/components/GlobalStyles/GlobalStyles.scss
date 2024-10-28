@@ -9,20 +9,23 @@
 :root {
   --main-green: #263d0f;
   --brighter-green: #315217;
-  --green-contrast: #355e3b;
+  --green-contrast: #18af87;
+  --black-bg-color: #121214;
   --black-color-effect: rgba(18, 18, 20, 0.8) !important;
   --box-shadow-effect: 0 4px 4px 0 rgba(0, 0, 0, 0.05) !important;
   --white-text: rgba(255, 255, 255) !important;
   --sx-height: 48px;
   --s_sx-height: 24px;
+  --sub-font_size: 12px;
   --small-font_size: 16px;
   --label-font_size: 24px;
-
   --small-weight: 500;
+  --title-weight: 600;
 }
 html {
   font-size: 62.5%;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
