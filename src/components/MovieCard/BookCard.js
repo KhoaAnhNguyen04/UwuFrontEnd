@@ -4,7 +4,6 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import BookHoverCard from "./BookHoverCard";
 export const BookLayoutContainer = styled.div`
   display: flex;
-
   flex-direction: column;
   gap: 16px;
   h4 {
@@ -30,12 +29,16 @@ export const BookCardContainer = styled.div`
     * {
       border-radius: 12px;
     }
+    height: 330px;
     .book-status {
       position: absolute;
       right: 0;
       background-color: var(--green-contrast);
       width: 80px;
       padding: 8px;
+    }
+    img {
+      height: 100%;
     }
   }
 `;
@@ -49,7 +52,7 @@ const BookCard = (props) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {isHovered && <BookHoverCard />}
+        {isHovered && <BookHoverCard img={props.img} title={props.title} />}
         <BookCardContainer>
           <div className="book-img-card">
             <div className="book-status">

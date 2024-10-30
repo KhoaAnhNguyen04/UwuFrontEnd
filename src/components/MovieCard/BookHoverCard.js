@@ -10,6 +10,7 @@ export const BookActiveContainer = styled.div`
   left: 0;
   display: flex;
   width: 700px;
+  height: 330px;
   background-color: var(--black-color-effect);
   padding: 16px;
   border-radius: 12px;
@@ -78,17 +79,16 @@ export const ButtonGroup = styled.div`
     font-size: var(--sub-font_size);
   }
 `;
-const BookHoverCard = () => {
-  // if (!props.hover) return null;
+const BookHoverCard = (props) => {
   return (
     <div>
       <BookActiveContainer>
         <div className="img_container">
-          <img src="book.jpg" />
+          <img src={props.img} />
         </div>
         <BookDescriptionLayout>
           <div className="detail_box">
-            <h3>Atomic Habit</h3>
+            <h3>{props.title}</h3>
             <h4>Jamie</h4>
             <CustomRating></CustomRating>
           </div>
