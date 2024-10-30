@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import BookList from "~/components/BookList/BookList";
 import BookHoverCard from "~/components/MovieCard/BookHoverCard";
 export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
+
   img {
     position: relative;
     top: 0;
@@ -18,7 +20,7 @@ const Dashboard = () => {
   return (
     <DashboardContainer>
       <img src="bbbg.png" alt="" />
-      <BookHoverCard>Alpha</BookHoverCard>
+      <BookList></BookList>
     </DashboardContainer>
   );
 };

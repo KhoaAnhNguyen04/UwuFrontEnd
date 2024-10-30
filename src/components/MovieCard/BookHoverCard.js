@@ -5,6 +5,9 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import AddIcon from "@mui/icons-material/Add";
 
 export const BookActiveContainer = styled.div`
+  z-index: 10000 !important;
+  position: absolute;
+  left: 0;
   display: flex;
   width: 700px;
   background-color: var(--black-color-effect);
@@ -15,10 +18,13 @@ export const BookActiveContainer = styled.div`
     color: var(--white-text);
   }
   .img_container {
-    flex-basis: 40%;
+    flex-basis: 45%;
+    position: relative;
     img {
+      position: relative;
       width: 100%;
-      z-index: 1000;
+      background: var(--book-img-cover);
+      overflow: hidden;
       border-radius: 12px;
     }
   }
@@ -73,36 +79,39 @@ export const ButtonGroup = styled.div`
   }
 `;
 const BookHoverCard = () => {
+  // if (!props.hover) return null;
   return (
-    <BookActiveContainer>
-      <div className="img_container">
-        <img src="book.jpg" />
-      </div>
-      <BookDescriptionLayout>
-        <div className="detail_box">
-          <h3>Atomic Habit</h3>
-          <h4>Jamie</h4>
-          <CustomRating></CustomRating>
+    <div>
+      <BookActiveContainer>
+        <div className="img_container">
+          <img src="book.jpg" />
         </div>
-        <ButtonGroup>
-          <p>Mien phi</p>
-          <Button>
-            <MenuBookIcon style={{ width: 24 }} /> Read Now
-          </Button>
-          {/* add the state if buy -> It will present read a demo */}
-          <Button>
-            <AddIcon style={{ width: 24 }} />
-            Buy Now
-          </Button>
-        </ButtonGroup>
-        <p>
-          Atomic Habits is a comprehensive, practical guide on how to change
-          your habits and get 1% better every day. Using a framework called the
-          Four Laws of Behavior Change
-        </p>
-        <a style={{ cursor: "pointer" }}>Feedback</a>
-      </BookDescriptionLayout>
-    </BookActiveContainer>
+        <BookDescriptionLayout>
+          <div className="detail_box">
+            <h3>Atomic Habit</h3>
+            <h4>Jamie</h4>
+            <CustomRating></CustomRating>
+          </div>
+          <ButtonGroup>
+            <p>Mien phi</p>
+            <Button>
+              <MenuBookIcon style={{ width: 24 }} /> Read Now
+            </Button>
+            {/* add the state if buy -> It will present read a demo */}
+            <Button>
+              <AddIcon style={{ width: 24 }} />
+              Buy Now
+            </Button>
+          </ButtonGroup>
+          <p>
+            Atomic Habits is a comprehensive, practical guide on how to change
+            your habits and get 1% better every day. Using a framework called
+            the Four Laws of Behavior Change
+          </p>
+          <a style={{ cursor: "pointer" }}>Feedback</a>
+        </BookDescriptionLayout>
+      </BookActiveContainer>
+    </div>
   );
 };
 
