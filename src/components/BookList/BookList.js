@@ -31,8 +31,7 @@ const BookList = () => {
       <h3>Title</h3>
       <div className="list_layout">
         <BookCard img="book.jpg" title="hang"></BookCard>
-        <BookCard img="book.jpg" title="hang"></BookCard>
-
+        <BookCard img="princeBook.png" title="hang"></BookCard>
         <BookCard img="book.jpg" title="hang"></BookCard>
       </div>
     </BookListContainer>
