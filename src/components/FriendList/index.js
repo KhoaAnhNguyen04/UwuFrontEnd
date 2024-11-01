@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import FriendList from "./FriendList";
-import { Button, ButtonGroup } from "@mui/material";
 import AddFriend from "./AddFriend";
 import FriendRequest from "./FriendRequest";
 export const FriendLayout = styled.div`
@@ -99,9 +98,9 @@ const FriendBox = () => {
             Add Friend
           </ListButton>
         </div>
-        {frPage == 1 && <FriendList></FriendList>}
-        {frPage == 2 && <AddFriend></AddFriend>}
-        {frPage == 3 && <FriendRequest></FriendRequest>}
+        {frPage === 1 && <FriendRequest></FriendRequest>}
+        {frPage === 2 && <FriendList></FriendList>}
+        {frPage === 3 && <AddFriend></AddFriend>}
       </SectionLayout>
     </FriendLayout>
   );

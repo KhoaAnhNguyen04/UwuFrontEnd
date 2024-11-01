@@ -1,7 +1,58 @@
 import React from "react";
+import CancelIcon from "@mui/icons-material/Cancel";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import styled from "styled-components";
+import { Avatar, IconButton, List, ListItem } from "@mui/material";
+export const RequestItemContainer = styled.div`
+  background-color: var(--wheat-color);
+  display: flex;
+  width: 100%;
+  gap: 16px;
+  padding: 16px 16px 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  justify-content: space-between;
+  .info_div {
+    flex-basis: 75%;
+    display: flex;
+    gap: 16px;
+  }
+  p {
+    padding-top: 8px;
+  }
+`;
+const RequestItem = (props) => {
+  return (
+    <RequestItemContainer>
+      <div className="info_div">
+        <p>1</p>
+        <Avatar src={props.avatarRef} />
+        <p>{props.name}</p>
+      </div>
+      <IconButton sx={{ padding: 0 }}>
+        <CheckCircleIcon
+          sx={{ fontSize: 36, color: "var(--green-contrast)" }}
+        />
+      </IconButton>
 
+      <IconButton sx={{ padding: 0 }}>
+        <CancelIcon sx={{ fontSize: 36, color: "var(--green-contrast)" }} />
+      </IconButton>
+    </RequestItemContainer>
+  );
+};
 const FriendRequest = () => {
-  return <div>AlphaMale</div>;
+  return (
+    <List
+      sx={{
+        width: "100%",
+      }}
+    >
+      <ListItem>
+        <RequestItem name="Khoa Nguyen Anh"></RequestItem>
+      </ListItem>
+    </List>
+  );
 };
 
 export default FriendRequest;

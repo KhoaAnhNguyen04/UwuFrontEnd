@@ -7,7 +7,7 @@ export const FriendItemContainer = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: var(--wheat-color);
   font-weight: var(--small-weight);
   gap: 16px;
   padding: 16px 16px 8px 16px;
