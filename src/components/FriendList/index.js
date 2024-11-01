@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import FriendList from "./FriendList";
 import { Button, ButtonGroup } from "@mui/material";
+import AddFriend from "./AddFriend";
+import FriendRequest from "./FriendRequest";
 export const FriendLayout = styled.div`
   width: 100%;
   height: 100vh;
@@ -75,24 +77,31 @@ export const ListButton = styled.button`
 `;
 
 const FriendBox = () => {
+  const [frPage, setFrPage] = useState(1);
   return (
     <FriendLayout>
       <a className="back_btn">Back to main</a>
       <SectionLayout>
         <div className="grp_button">
           <ListButton
+            onClick={() => setFrPage(1)}
             style={{ borderTopLeftRadius: "12px", borderRightWidth: "2px" }}
           >
             Friend Request
           </ListButton>
-          <ListButton>Friend List</ListButton>
+          <ListButton onClick={() => setFrPage(2)} key={"fr_list"}>
+            Friend List
+          </ListButton>
           <ListButton
+            onClick={() => setFrPage(3)}
             style={{ borderTopRightRadius: "12px", borderLeftWidth: "2px" }}
           >
             Add Friend
           </ListButton>
         </div>
-        <FriendList></FriendList>
+        {frPage == 1 && <FriendList></FriendList>}
+        {frPage == 2 && <AddFriend></AddFriend>}
+        {frPage == 3 && <FriendRequest></FriendRequest>}
       </SectionLayout>
     </FriendLayout>
   );
