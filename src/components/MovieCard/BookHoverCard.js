@@ -6,6 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 export const BookActiveContainer = styled.div`
   z-index: 10000 !important;
+  transition: opacity 0.3s ease;
   position: absolute;
   left: 0;
   display: flex;
@@ -97,7 +98,6 @@ const BookHoverCard = (props) => {
             <Button>
               <MenuBookIcon style={{ width: 24 }} /> Read Now
             </Button>
-            {/* add the state if buy -> It will present read a demo */}
             <Button>
               <AddIcon style={{ width: 24 }} />
               Buy Now

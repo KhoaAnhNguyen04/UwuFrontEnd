@@ -1,35 +1,57 @@
 import { Avatar, List, ListItem, ListItemAvatar } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-export const ListFriendContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background: var(--black-color-effect);
-`;
+import Streak from "./Streak";
+
 export const FriendItemContainer = styled.div`
+  position: relative;
   display: flex;
-  /* justify-content: flex-start; */
   width: 100%;
   background-color: #f5f5f5;
-  font-size: var(--mini-label-font-size);
   font-weight: var(--small-weight);
   gap: 16px;
   padding: 16px 16px 8px 16px;
   border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
   p {
     padding-top: 8px;
   }
   .img_con {
     margin-left: auto;
   }
+  &:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0%;
+    position: absolute;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    z-index: -1;
+  }
+  &:hover {
+    &:after {
+      width: 100%;
+      background-color: #f5e6ac;
+    }
+  }
 `;
-const FriendItem = () => {
+export const AvaContainer = styled.div`
+  position: relative;
+`;
+
+const FriendItem = (props) => {
   return (
     <FriendItemContainer>
       <p>1</p>
-      <Avatar src="" />
-      <p>Nguyen Viet Hung</p>
+      <AvaContainer>
+        <Avatar src={props.avatarRef} />
+        <Streak streak={props.streak} />
+      </AvaContainer>
+      <p>{props.name}</p>
       <div className="img_con">
         <img src="top2.png" width={"40px"}></img>
       </div>
@@ -38,26 +60,21 @@ const FriendItem = () => {
 };
 const FriendList = () => {
   return (
-    <ListFriendContainer>
-      <List
-        sx={{
-          width: "25%",
-          bgcolor: "var(--green-contrast)",
-          right: "0px",
-          position: "absolute",
-          marginTop: "15%",
-          borderRadius: "16px",
-          marginRight: "2.5%",
-        }}
-      >
-        <ListItem>
-          <FriendItem></FriendItem>
-        </ListItem>
-        <ListItem>
-          <FriendItem></FriendItem>
-        </ListItem>
-      </List>
-    </ListFriendContainer>
+    <List
+      sx={{
+        width: "100%",
+      }}
+    >
+      <ListItem>
+        <FriendItem streak="5" name="Nguyen Viet Hung"></FriendItem>
+      </ListItem>
+      <ListItem>
+        <FriendItem streak="6" name="Nguyen Anh Khoa"></FriendItem>
+      </ListItem>
+      <ListItem>
+        <FriendItem streak="3" name="Pham Dinh Bao Duy"></FriendItem>
+      </ListItem>
+    </List>
   );
 };
 

@@ -13,15 +13,19 @@ const Navbar = () => {
       </SearchContainer>
       <DetailText content="Membership"></DetailText>
       <DetailText content="Leaderbroad"></DetailText>
-      <DetailText content="Friends"></DetailText>
+      <a href="/friend">
+        <DetailText content="Friends"></DetailText>
+      </a>
       <MedButton
         content="Login"
         bgColor="white"
+        href="/log-in"
         color="var(--main-green)"
       ></MedButton>
       <MedButton
         content="Sign up"
         bgColor="var(--main-green)"
+        href="/sign-up"
         color="white"
       ></MedButton>
     </NavbarContainer>

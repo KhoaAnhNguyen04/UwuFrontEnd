@@ -4,6 +4,7 @@ export const NavbarContainer = styled.div`
   background: linear-gradient(180deg, rgba(18, 18, 20, 0.68), transparent);
   position: fixed;
   display: flex;
+  z-index: 1000;
   justify-content: space-between;
   width: 100%;
   max-height: 200px;

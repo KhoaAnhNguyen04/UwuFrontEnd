@@ -42,7 +42,11 @@ export const BookCardContainer = styled.div`
     }
   }
 `;
-export const BookOnHover = styled(BookHoverCard)``;
+export const BookOnHover = styled(BookHoverCard)`
+  ${BookHoverContainer}:hover & {
+    opacity: 1;
+  }
+`;
 
 const BookCard = (props) => {
   const [isHovered, setIsHovered] = useState(false);
