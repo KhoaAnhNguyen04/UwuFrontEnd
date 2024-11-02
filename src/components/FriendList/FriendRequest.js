@@ -18,7 +18,7 @@ export const RequestItemContainer = styled.div`
     gap: 16px;
   }
   p {
-    padding-top: 8px;
+    padding-top: 4px;
   }
 `;
 const RequestItem = (props) => {
@@ -27,7 +27,7 @@ const RequestItem = (props) => {
       <div className="info_div">
         <p>1</p>
         <Avatar src={props.avatarRef} />
-        <p>{props.name}</p>
+        <p>{props.name} sent you a friend request</p>
       </div>
       <IconButton sx={{ padding: 0 }}>
         <CheckCircleIcon
