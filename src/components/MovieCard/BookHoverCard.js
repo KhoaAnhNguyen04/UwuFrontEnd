@@ -81,6 +81,16 @@ export const ButtonGroup = styled.div`
   }
 `;
 const BookHoverCard = (props) => {
+  let description = String(props.description);
+  if (description.length > 150) {
+    description = description.substring(0, 250);
+    let max = Math.max(
+      description.lastIndexOf("."),
+      description.lastIndexOf(",")
+    );
+    description = description.substring(0, max);
+  }
+
   return (
     <div>
       <BookActiveContainer>
@@ -91,7 +101,11 @@ const BookHoverCard = (props) => {
           <div className="detail_box">
             <h3>{props.title}</h3>
             <h4>Jamie</h4>
-            <CustomRating></CustomRating>
+            <CustomRating
+              readOnly
+              value={props.rating}
+              precision={0.5}
+            ></CustomRating>
           </div>
           <ButtonGroup>
             <p>Mien phi</p>
@@ -104,9 +118,7 @@ const BookHoverCard = (props) => {
             </Button>
           </ButtonGroup>
           <p>
-            Atomic Habits is a comprehensive, practical guide on how to change
-            your habits and get 1% better every day. Using a framework called
-            the Four Laws of Behavior Change
+            {description} <a>More </a>
           </p>
           <a style={{ cursor: "pointer" }}>Feedback</a>
         </BookDescriptionLayout>

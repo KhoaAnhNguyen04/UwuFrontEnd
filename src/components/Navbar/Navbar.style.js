@@ -13,6 +13,12 @@ export const NavbarContainer = styled.div`
     height: 36px;
     margin: auto 0px;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    border: none;
+  }
 `;
 export const SearchContainer = styled.div`
   flex-basis: 55%;

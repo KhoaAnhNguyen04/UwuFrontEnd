@@ -34,6 +34,12 @@ const BookList = () => {
         <BookCard
           img="princeBook.png"
           title="Hoang Tu Be Hoang Tu Be Hoang Tu Be"
+          description="Atomic Habits is a comprehensive, practical guide on how to change
+            your habits and get 1% better every day. Using a framework called
+            the Four Laws of Behavior Change  Atomic Habits is a comprehensive, practical guide on how to change
+            your habits and get 1% better every day. Using a framework called
+            the Four Laws of Behavior Change"
+          rating="4.5"
         ></BookCard>
         <BookCard img="horror_bk.png" title="Anh Khoa"></BookCard>
         <BookCard img="bk2.png" title="Viet Hung"></BookCard>

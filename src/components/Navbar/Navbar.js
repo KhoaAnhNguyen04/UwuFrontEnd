@@ -6,16 +6,15 @@ import { NavbarContainer, SearchBar, SearchContainer } from "./Navbar.style";
 const Navbar = () => {
   return (
     <NavbarContainer>
-      <img src="/icon.svg" alt="Icon" />
+      <a href="/">
+        <img src="/icon.svg" alt="Icon" />
+      </a>
       <SearchContainer>
         <SearchBar id="standard-basic" variant="standard" />
         <img src="/search_icon.svg" alt="Icon" />
       </SearchContainer>
       <a href="/membership">
         <DetailText content="Membership"></DetailText>
-      </a>
-      <a href="/">
-        <DetailText content="Leaderbroad"></DetailText>
       </a>
       <a href="/friend">
         <DetailText content="Friends"></DetailText>

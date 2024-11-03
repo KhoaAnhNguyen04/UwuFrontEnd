@@ -56,7 +56,14 @@ const BookCard = (props) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {isHovered && <BookHoverCard img={props.img} title={props.title} />}
+        {isHovered && (
+          <BookHoverCard
+            img={props.img}
+            title={props.title}
+            description={props.description}
+            rating={props.rating}
+          />
+        )}
         <BookCardContainer>
           <div className="book-img-card">
             <div className="book-status">
