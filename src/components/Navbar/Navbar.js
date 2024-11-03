@@ -11,8 +11,12 @@ const Navbar = () => {
         <SearchBar id="standard-basic" variant="standard" />
         <img src="/search_icon.svg" alt="Icon" />
       </SearchContainer>
-      <DetailText content="Membership"></DetailText>
-      <DetailText content="Leaderbroad"></DetailText>
+      <a href="/membership">
+        <DetailText content="Membership"></DetailText>
+      </a>
+      <a href="/">
+        <DetailText content="Leaderbroad"></DetailText>
+      </a>
       <a href="/friend">
         <DetailText content="Friends"></DetailText>
       </a>
