@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <a href="/">
-        <img src="/icon.svg" alt="Icon" />
+        <img style={{ marginTop: 4 }} src="/icon.svg" alt="Icon" />
       </a>
       <SearchContainer>
         <SearchBar id="standard-basic" variant="standard" />

@@ -4,9 +4,11 @@ import BookList from "~/components/BookList/BookList";
 export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  img {
-    position: relative;
+  position: relative;
+  padding-top: 30%;
+  overflow-y: auto;
+  .header_img {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -17,7 +19,9 @@ export const DashboardContainer = styled.div`
 const Dashboard = () => {
   return (
     <DashboardContainer>
-      <img src="bbbg.png" alt="" />
+      <img className="header_img" src="bbbg.png" alt="" />
+      <BookList></BookList>
+      <BookList></BookList>
       <BookList></BookList>
     </DashboardContainer>
   );
