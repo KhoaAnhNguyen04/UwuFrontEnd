@@ -120,7 +120,9 @@ const BookHoverCard = (props) => {
           <p>
             {description} <a>More </a>
           </p>
-          <a style={{ cursor: "pointer" }}>Feedback</a>
+          <a href="/review" style={{ cursor: "pointer" }}>
+            Review
+          </a>
         </BookDescriptionLayout>
       </BookActiveContainer>
     </div>
