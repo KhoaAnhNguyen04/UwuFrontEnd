@@ -3,6 +3,7 @@ import styled from "styled-components";
 import FriendList from "./FriendList";
 import AddFriend from "./AddFriend";
 import FriendRequest from "./FriendRequest";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 export const FriendLayout = styled.div`
   width: 100%;
   height: 100vh;
@@ -79,7 +80,10 @@ const FriendBox = () => {
   const [frPage, setFrPage] = useState(1);
   return (
     <FriendLayout>
-      <a className="back_btn">Back to main</a>
+      <div className="back_btn">
+        <ArrowBackIcon sx={{ fontSize: 24, alignSelf: "center" }} />
+        <a href="/">Back to main</a>
+      </div>
       <SectionLayout>
         <div className="grp_button">
           <ListButton

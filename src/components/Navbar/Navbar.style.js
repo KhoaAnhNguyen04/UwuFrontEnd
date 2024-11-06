@@ -9,6 +9,7 @@ export const NavbarContainer = styled.div`
   width: 100%;
   max-height: 200px;
   padding: 0px 60px;
+  padding-top: 12px;
   img {
     height: 36px;
     margin: auto 0px;
@@ -43,5 +44,56 @@ export const SearchBar = styled(TextField)`
       height: 100%;
       width: 400px;
     }
+  }
+`;
+export const UserBoxHover = styled.div`
+  display: block;
+
+  &:hover {
+    .user_content {
+      display: flex;
+      padding: 16px;
+      border-color: var(--green-contrast);
+      border-width: 4px;
+    }
+  }
+  .user_content {
+    width: 200px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    gap: 8px;
+    margin-top: 12px;
+    right: 60px;
+    border-radius: 8px;
+    .user_info {
+      width: 100%;
+      display: flex;
+      gap: 16px;
+    }
+    .member_info {
+      display: flex;
+      gap: 16px;
+      .MuiBadge-colorSecondary {
+        background-color: var(--green-contrast) !important;
+      }
+      .MuiBadge-root {
+        margin-top: 4px;
+      }
+    }
+  }
+  .user_content::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 44px;
+    height: 24px;
+  }
+`;
+export const ElementTag = styled.a`
+  &:hover {
+    color: var(--green-contrast);
   }
 `;
