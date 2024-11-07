@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DetailText from "../SmallCompo/DetailText";
 import MedButton from "../SmallCompo/MedButton";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import SearchIcon from "@mui/icons-material/Search";
 import {
   ElementTag,
   NavbarContainer,
@@ -19,8 +20,16 @@ const Navbar = () => {
         <img style={{ marginTop: 4 }} src="/icon.svg" alt="Icon" />
       </a>
       <SearchContainer>
-        <SearchBar id="standard-basic" variant="standard" />
-        <img src="/search_icon.svg" alt="Icon" />
+        <SearchIcon sx={{ fontSize: 32, color: "var(--green-contrast)" }} />
+
+        <SearchBar
+          id="standard-basic"
+          variant="outlined"
+          sx={{
+            borderColor: "var(--green-contrast)",
+            zIndex: 1000,
+          }}
+        />
       </SearchContainer>
       <a href="/membership">
         <DetailText content="Membership"></DetailText>

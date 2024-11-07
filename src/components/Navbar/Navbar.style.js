@@ -29,9 +29,14 @@ export const SearchContainer = styled.div`
   }
 `;
 export const SearchBar = styled(TextField)`
+  .css-quhxjy-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+    .MuiOutlinedInput-notchedOutline {
+    border-color: var(--green-contrast);
+  }
   && {
     * {
       font-size: var(--small-font_size);
+      color: var(--wheat-color);
     }
     margin: auto 0px;
     height: 36px;
