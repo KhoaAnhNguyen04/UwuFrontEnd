@@ -73,7 +73,9 @@ const BookCard = (props) => {
           </div>
         </BookCardContainer>
       </BookHoverContainer>
-      <h4>{props.title} </h4>
+      <a href="/book">
+        <h4>{props.title} </h4>
+      </a>
     </BookLayoutContainer>
   );
 };
