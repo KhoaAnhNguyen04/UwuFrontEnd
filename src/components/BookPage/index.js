@@ -25,9 +25,24 @@ const BookPage = () => {
       </div>
       <BookInfoContainer>
         <h1>Book Title</h1>
-        <h2>Title</h2>
-        <p>Rating:</p>
+        <div>
+          <p>Rating</p>
+          <p>Number of Rating</p>
+        </div>
+        <div>
+          <p>Author</p>
+          <p>Author Name</p>
+        </div>
+        <div>
+          <p>Category</p>
+          <p>Cate Name</p>
+        </div>
+
+        <p>Release Date</p>
+        <p>Mien phi</p>
         <p>description</p>
+        <p>Review Button</p>
+        <p>Reading Button</p>
       </BookInfoContainer>
       <FeedbackContainer></FeedbackContainer>
     </BookPageLayout>
