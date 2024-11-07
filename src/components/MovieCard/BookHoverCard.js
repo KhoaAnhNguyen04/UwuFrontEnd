@@ -3,9 +3,10 @@ import React from "react";
 import styled from "styled-components";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import AddIcon from "@mui/icons-material/Add";
+import { useNavigate } from "react-router-dom";
 
 export const BookActiveContainer = styled.div`
-  z-index: 10000 !important;
+  z-index: 100 !important;
   transition: opacity 0.3s ease;
   position: absolute;
   left: 0;
@@ -90,6 +91,14 @@ const BookHoverCard = (props) => {
     );
     description = description.substring(0, max);
   }
+  const navigate = useNavigate();
+  const handleOnClick = () => {
+    navigate(`/book/${props.title}`, {
+      state: {
+        ...props,
+      },
+    });
+  };
 
   return (
     <div>
@@ -109,7 +118,7 @@ const BookHoverCard = (props) => {
           </div>
           <ButtonGroup>
             <p>Mien phi</p>
-            <Button>
+            <Button onClick={handleOnClick}>
               <MenuBookIcon style={{ width: 24 }} /> Read Now
             </Button>
             <Button>
