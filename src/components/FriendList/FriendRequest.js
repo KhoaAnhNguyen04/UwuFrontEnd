@@ -17,25 +17,22 @@ export const RequestItemContainer = styled.div`
     display: flex;
     gap: 16px;
   }
-  p {
-    padding-top: 4px;
-  }
 `;
 const RequestItem = (props) => {
   return (
     <RequestItemContainer>
       <div className="info_div">
-        <p>1</p>
+        <p style={{ lineHeight: "16px", paddingTop: "8px" }}>1</p>
         <Avatar src={props.avatarRef} />
         <p>{props.name} sent you a friend request</p>
       </div>
-      <IconButton sx={{ padding: 0 }}>
+      <IconButton sx={{ padding: 0, height: 36, marginTop: "8px" }}>
         <CheckCircleIcon
           sx={{ fontSize: 36, color: "var(--green-contrast)" }}
         />
       </IconButton>
 
-      <IconButton sx={{ padding: 0 }}>
+      <IconButton sx={{ padding: 0, height: 36, marginTop: "8px" }}>
         <CancelIcon sx={{ fontSize: 36, color: "var(--green-contrast)" }} />
       </IconButton>
     </RequestItemContainer>

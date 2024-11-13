@@ -5,6 +5,7 @@ import FriendBox from "~/components/FriendList";
 import MemberLayout from "~/components/MembershipComponent";
 import Review from "~/components/BookList/Review";
 import BookPage from "~/components/BookPage";
+import UploadForm from "~/components/MovieUpload";
 
 const routes = [
   { path: "/", component: Dashboard },
@@ -15,6 +16,7 @@ const routes = [
   { path: "/review", component: Review },
   // { path: "/book/:book_title", component: (props) => <BookPage {...props} /> },
   { path: "/book", component: BookPage },
+  { path: "/admin-form", component: UploadForm },
 ];
 
 export { routes };
