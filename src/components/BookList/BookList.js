@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import BookCard from "../MovieCard/BookCard";
+import BookCard from "../MovieCard/BookCard"; //
+
+import data from "./data";
 
 export const BookListContainer = styled.div`
   display: flex;
@@ -11,17 +13,22 @@ export const BookListContainer = styled.div`
   padding: 0px 32px;
   gap: 24px;
   height: 500px;
+
   * {
     color: var(--white-text);
   }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-text);
+  }
+
   .list_layout {
     display: flex;
     gap: 32px;
     overflow-x: scroll;
-  }
-  .temp {
-    width: 200px;
-    height: 200px;
+    padding-bottom: 16px;
   }
 `;
 
@@ -30,24 +37,15 @@ const BookList = () => {
     <BookListContainer>
       <h3>Title</h3>
       <div className="list_layout">
-        <BookCard img="bk1.png" title="Atomic Habit"></BookCard>
-        <BookCard
-          img="princeBook.png"
-          title="Hoang Tu Be Hoang Tu Be Hoang Tu Be"
-          description="Atomic Habits is a comprehensive, practical guide on how to change
-            your habits and get 1% better every day. Using a framework called
-            the Four Laws of Behavior Change  Atomic Habits is a comprehensive, practical guide on how to change
-            your habits and get 1% better every day. Using a framework called
-            the Four Laws of Behavior Change"
-          rating="4.5"
-        ></BookCard>
-        <BookCard img="horror_bk.png" title="Anh Khoa"></BookCard>
-        <BookCard img="bk2.png" title="Viet Hung"></BookCard>
-        <BookCard img="bk3.png" title="Bao Duy"></BookCard>
-        <BookCard img="bk4.png" title="hang"></BookCard>
-        <BookCard img="book.jpg" title="hang"></BookCard>
-        <BookCard img="princeBook.png" title="hang"></BookCard>
-        <BookCard img="horror_bk.png" title="hang"></BookCard>
+        {data.map((book, index) => (
+          <BookCard
+            key={index}
+            img={book.img}
+            title={book.title}
+            description={book.description}
+            rating={book.rating}
+          />
+        ))}
       </div>
     </BookListContainer>
   );

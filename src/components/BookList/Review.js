@@ -1,6 +1,6 @@
 import { Button, Rating, TextField } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 export const ReviewLayout = styled.div`
   position: relative;
@@ -42,41 +42,57 @@ export const ReviewBox = styled.div`
 `;
 
 const Review = () => {
+  const [rating, setRating] = useState(5);
+  const [feedback, setFeedback] = useState("");
+
+  const handleSubmit = () => {
+    console.log("Rating:", rating);
+    console.log("Feedback:", feedback);
+  };
+
   return (
     <ReviewLayout>
       <ReviewBox>
-        <a style={{ color: "black" }} href="/">
+        <a href="/">
           <CancelIcon
             sx={{
-              position: "absolute",
-              right: "8px",
-              fontSize: "20px",
-              top: "8px",
+              fontSize: "24px",
+              cursor: "pointer",
             }}
           />
         </a>
 
-        <h2 style={{ textAlign: "center", width: "100%", marginBottom: -4 }}>
-          Review and Rating
-        </h2>
+        <h2>Review and Rating</h2>
+
         <div className="rating_box">
           <h3>Rating</h3>
-          <Rating defaultValue={5} sx={{ fontSize: 24 }}></Rating>
+          <Rating
+            name="review-rating"
+            value={rating}
+            onChange={(event, newValue) => {
+              setRating(newValue);
+            }}
+            sx={{ fontSize: 32 }}
+          />
         </div>
-        <div style={{ width: "100%" }}>
+
+        <div>
           <h3>Feedback</h3>
           <TextField
-            placeholder={"Feel free to give us your experience"}
+            placeholder="Feel free to give us your experience"
             fullWidth
             multiline
             rows={5}
-            id="outlined-basic"
             variant="outlined"
+            value={feedback}
+            onChange={(e) => setFeedback(e.target.value)}
           />
         </div>
+
         <Button
           variant="contained"
-          sx={{ fontSize: 12, fontWeight: 600, marginTop: "4px" }}
+          sx={{ fontSize: 14, fontWeight: 600, marginTop: "16px" }}
+          onClick={handleSubmit}
         >
           Send
         </Button>

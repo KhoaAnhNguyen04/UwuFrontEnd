@@ -45,7 +45,6 @@ export const MemberItem = styled.div`
 export const MembershipContainer = styled.div`
   background-color: var(--black-color-effect);
   height: 100vh;
-
   .container {
     position: absolute;
     display: flex;
