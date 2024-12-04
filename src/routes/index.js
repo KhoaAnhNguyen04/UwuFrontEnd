@@ -6,6 +6,7 @@ import MemberLayout from "~/components/MembershipComponent";
 import Review from "~/components/BookList/Review";
 import BookPage from "~/components/BookPage";
 import UploadForm from "~/components/MovieUpload";
+import MyBookPage from "~/components/MyBookPage/MyBookPage";
 
 const routes = [
   { path: "/", component: Dashboard },
@@ -17,6 +18,7 @@ const routes = [
   // { path: "/book/:book_title", component: (props) => <BookPage {...props} /> },
   { path: "/book", component: BookPage },
   { path: "/admin-form", component: UploadForm },
+  { path: "/my_book", component: MyBookPage },
 ];
 
 export { routes };

@@ -49,7 +49,9 @@ export default function DateInput(props) {
   const [value, setValue] = React.useState("");
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    const newValue = event.target.value;
+    setValue(newValue);
+    console.log(`DateInput Value: ${newValue}`);
   };
 
   return (
@@ -63,9 +65,9 @@ export default function DateInput(props) {
             onChange={handleChange}
             placeholder={`Enter ${props.name}`}
             style={{
-              appearance: "none", // Remove the default style
-              MozAppearance: "none", // Firefox-specific
-              WebkitAppearance: "none", // Safari/Chrome
+              appearance: "none",
+              MozAppearance: "none",
+              WebkitAppearance: "none",
             }}
           />
         </InputWrapper>

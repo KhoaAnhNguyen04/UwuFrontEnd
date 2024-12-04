@@ -5,6 +5,7 @@ import {
   StyledBox,
   SubmitButton,
 } from "./LoginForm.style";
+import config from "~/config";
 import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
@@ -27,7 +28,7 @@ const SignupForm = () => {
     e.preventDefault();
     console.log("Form data:", formData);
     try {
-      const response = await fetch("/api/signup", {
+      const response = await fetch("${config.API_BASE_URL}/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
