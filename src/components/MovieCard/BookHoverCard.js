@@ -135,7 +135,7 @@ const BookHoverCard = (props) => {
             </Button>
           </ButtonsGroup>
           <p>
-            {description} <a>More </a>
+            {description} <a href="/book">More </a>
           </p>
           <a href="/review" style={{ cursor: "pointer" }}>
             Review

@@ -67,7 +67,7 @@ const Navbar = () => {
                 <MenuBookIcon sx={{ fontSize: 20 }} />
               </Badge>
             </div>
-            <ElementTag>My BookList</ElementTag>
+            <ElementTag href="/my_book">My BookList</ElementTag>
             <ElementTag>Manage Account</ElementTag>
             <ElementTag>Log out</ElementTag>
           </div>

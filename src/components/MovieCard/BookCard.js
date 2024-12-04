@@ -7,6 +7,7 @@ export const BookLayoutContainer = styled.div`
   flex-direction: column;
   gap: 16px;
   h4 {
+    width: 220px;
     cursor: pointer;
     &:hover {
       color: var(--green-contrast);
@@ -39,6 +40,7 @@ export const BookCardContainer = styled.div`
     }
     img {
       height: 100%;
+      width: 220px;
     }
   }
 `;
