@@ -58,7 +58,7 @@ const FriendItem = (props) => {
     </FriendItemContainer>
   );
 };
-const FriendList = () => {
+const FriendList = ({ data }) => {
   return (
     <List
       sx={{

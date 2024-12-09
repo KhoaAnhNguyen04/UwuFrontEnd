@@ -14,7 +14,7 @@ export const BookPageLayout = styled.div`
 export const BookInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   color: white;
   flex-basis: 45%;
   padding: 0 60px;

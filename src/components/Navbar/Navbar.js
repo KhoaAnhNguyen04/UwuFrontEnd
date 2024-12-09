@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DetailText from "../SmallCompo/DetailText";
 import MedButton from "../SmallCompo/MedButton";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
@@ -11,17 +11,17 @@ import {
   UserBoxHover,
 } from "./Navbar.style";
 import { Avatar, Badge, Chip } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
-  const [login, setLogin] = useState(true);
+const Navbar = ({ login, setLogin }) => {
+  const navigate = useNavigate();
   return (
     <NavbarContainer>
-      <a href="/">
+      <a onClick={() => navigate("/")}>
         <img style={{ marginTop: 4 }} src="/icon.svg" alt="Icon" />
       </a>
       <SearchContainer>
         <SearchIcon sx={{ fontSize: 32, color: "var(--green-contrast)" }} />
-
         <SearchBar
           id="standard-basic"
           variant="outlined"
@@ -31,35 +31,37 @@ const Navbar = () => {
           }}
         />
       </SearchContainer>
-      <a href="/membership">
+      <a onClick={() => navigate("/membership")}>
         <DetailText content="Membership"></DetailText>
       </a>
-      <a href="/friend">
+      <a onClick={() => navigate("/friend")}>
         <DetailText content="Friends"></DetailText>
       </a>
-      {login === false && (
-        <MedButton
-          content="Login"
-          bgColor="white"
-          href="/log-in"
-          color="var(--main-green)"
-        ></MedButton>
+
+      {!login && (
+        <>
+          <MedButton
+            onClick={() => navigate("/login")}
+            content="Login"
+            bgColor="white"
+            color="var(--main-green)"
+          />
+          <MedButton
+            content="Sign up"
+            bgColor="var(--main-green)"
+            onClick={() => navigate("/sign-up")}
+            color="white"
+          />
+        </>
       )}
-      {login === false && (
-        <MedButton
-          content="Sign up"
-          bgColor="var(--main-green)"
-          href="/sign-up"
-          color="white"
-        ></MedButton>
-      )}
-      {login === true && (
+
+      {login && (
         <UserBoxHover>
-          <Avatar></Avatar>
+          <Avatar alt="User" />
           <div className="user_content">
             <div className="user_info">
               <h4>Khoa Anh Nguyen</h4>
-              <Avatar></Avatar>
+              <Avatar alt="User Avatar" />
             </div>
             <div className="member_info">
               <Chip sx={{ fontSize: 12 }} label="Free member" />
@@ -69,7 +71,7 @@ const Navbar = () => {
             </div>
             <ElementTag href="/my_book">My BookList</ElementTag>
             <ElementTag>Manage Account</ElementTag>
-            <ElementTag>Log out</ElementTag>
+            <ElementTag onClick={() => setLogin(false)}>Log out</ElementTag>
           </div>
         </UserBoxHover>
       )}

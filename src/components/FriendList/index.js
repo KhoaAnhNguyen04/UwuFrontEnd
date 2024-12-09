@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import FriendList from "./FriendList";
 import AddFriend from "./AddFriend";
 import FriendRequest from "./FriendRequest";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import axios from "axios";
 export const FriendLayout = styled.div`
   width: 100%;
   height: 100vh;
@@ -77,7 +78,25 @@ export const ListButton = styled.button`
 `;
 
 const FriendBox = () => {
+  const backendUrl = process.env.REACT_APP_BACKEND;
+  const userId = localStorage.getItem("userID");
   const [frPage, setFrPage] = useState(1);
+  const [friendList, setFriendList] = useState([]);
+  const [error, setError] = useState();
+  const handleGetFriend = async () => {
+    try {
+      const response = await axios.get(`${backendUrl}/friends/${userId}`);
+      console.log("Users fetched successfully:", response.data);
+      setFriendList(response.data);
+    } catch (error) {
+      setError("Failed to fetch users. Please try again later.");
+    } finally {
+    }
+  };
+
+  useEffect(() => {
+    handleGetFriend();
+  }, []);
   return (
     <FriendLayout>
       <div className="back_btn">

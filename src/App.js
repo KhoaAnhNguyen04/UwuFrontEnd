@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import styled from "styled-components";
 export const AppContainer = styled.div`
@@ -32,11 +32,12 @@ export const BackgroundContainer = styled.div`
 `;
 
 function App() {
+  const [login, setLogin] = useState(false);
   return (
     <AppContainer>
       <BackgroundContainer className="content">
         <img className="main_img" src="main-bg.png" />
-        <Navbar />
+        <Navbar login={login} setLogin={setLogin} />
         <div className="content">
           <Routes>
             {routes.map((route, index) => {
@@ -48,7 +49,7 @@ function App() {
                   path={route.path}
                   element={
                     <Layout>
-                      <Page />
+                      <Page login={login} setLogin={setLogin} />
                     </Layout>
                   }
                 />

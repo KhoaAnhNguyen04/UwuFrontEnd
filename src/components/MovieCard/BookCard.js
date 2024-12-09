@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import BookHoverCard from "./BookHoverCard";
+import { useNavigate } from "react-router-dom";
 export const BookLayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -51,6 +52,7 @@ export const BookOnHover = styled(BookHoverCard)`
 `;
 
 const BookCard = (props) => {
+  const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
   return (
     <BookLayoutContainer>
@@ -60,6 +62,7 @@ const BookCard = (props) => {
       >
         {isHovered && (
           <BookHoverCard
+            bookId={props.bookId}
             img={props.img}
             title={props.title}
             description={props.description}
@@ -75,7 +78,7 @@ const BookCard = (props) => {
           </div>
         </BookCardContainer>
       </BookHoverContainer>
-      <a href="/book">
+      <a onClick={() => navigate("/book", { state: { bookId: props.bookId } })}>
         <h4>{props.title} </h4>
       </a>
     </BookLayoutContainer>

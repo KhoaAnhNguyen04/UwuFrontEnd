@@ -2,6 +2,7 @@ import { FormControl, Input, InputAdornment, InputLabel } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
+import axios from "axios";
 export const AddItemContainer = styled.div``;
 export const AddFriendLayout = styled.div`
   display: flex;
@@ -10,6 +11,16 @@ export const AddFriendLayout = styled.div`
 `;
 
 const AddFriend = () => {
+  // const handleAddFriend = async () => {
+  //   try {
+  //     const response = await axios.post(`${backendUrl}/friends/${userId}`);
+  //     console.log("Users fetched successfully:", response.data);
+  //     setFriendList(response.data);
+  //   } catch (error) {
+  //     setError("Failed to fetch users. Please try again later.");
+  //   } finally {
+  //   }
+  // };
   return (
     <AddFriendLayout>
       <FormControl sx={{ width: "100%" }} variant="outlined">

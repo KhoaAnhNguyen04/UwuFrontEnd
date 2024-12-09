@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BookCard from "../MovieCard/BookCard";
-import data from "../BookList/data";
+import data from "../../pages/StudentPages/Dashboard/data";
 export const MyBookLayout = styled.div`
   display: flex;
   gap: 4%;

@@ -8,10 +8,9 @@ import BookPage from "~/components/BookPage";
 import UploadForm from "~/components/MovieUpload";
 import MyBookPage from "~/components/MyBookPage/MyBookPage";
 
-
 const routes = [
   { path: "/", component: Dashboard },
-  { path: "/log-in", component: LoginForm },
+  { path: "/login", component: LoginForm },
   { path: "/sign-up", component: SignupForm },
   { path: "/friend", component: FriendBox },
   { path: "/membership", component: MemberLayout },

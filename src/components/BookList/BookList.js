@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BookCard from "../MovieCard/BookCard"; //
-
-import data from "./data";
+import BookCard from "../MovieCard/BookCard";
 
 export const BookListContainer = styled.div`
   display: flex;
@@ -13,7 +11,6 @@ export const BookListContainer = styled.div`
   padding: 0px 32px;
   gap: 24px;
   height: 500px;
-
   * {
     color: var(--white-text);
   }
@@ -21,7 +18,6 @@ export const BookListContainer = styled.div`
   h3 {
     font-size: 24px;
     font-weight: 600;
-    color: var(--primary-text);
   }
 
   .list_layout {
@@ -32,17 +28,21 @@ export const BookListContainer = styled.div`
   }
 `;
 
-const BookList = () => {
+const BookList = ({ data, imgList, title }) => {
+  if (!Array.isArray(data) || !Array.isArray(imgList)) {
+    return <p>Invalid data or image list</p>;
+  }
   return (
     <BookListContainer>
-      <h3>Title</h3>
+      <h3>{title}</h3>
       <div className="list_layout">
         {data.map((book, index) => (
           <BookCard
+            bookId={book.bookid}
             key={index}
-            img={book.img}
+            img={imgList[index].img}
             title={book.title}
-            description={book.description}
+            description={`Published on: ${book.publication_date}`}
             rating={book.rating}
           />
         ))}

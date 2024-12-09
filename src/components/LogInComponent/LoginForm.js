@@ -8,10 +8,11 @@ import {
   SubmitButton,
 } from "./LoginForm.style";
 
-const LoginForm = () => {
+const LoginForm = ({ setLogin }) => {
+  const backendUrl = process.env.REACT_APP_BACKEND;
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    username: "",
+    user_name: "",
     password: "",
   });
 
@@ -28,9 +29,11 @@ const LoginForm = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post("/api/login", formData);
+      const response = await axios.post(`${backendUrl}/login/`, formData);
       if (response.status === 200) {
         console.log("Login successful:", response.data);
+        localStorage.setItem("userID", response.data.UserID);
+        setLogin(true);
         navigate("/");
       } else {
         setError("Invalid credentials. Please try again.");
@@ -56,8 +59,8 @@ const LoginForm = () => {
         <form onSubmit={handleSubmit}>
           <InputField
             label="Username"
-            name="username"
-            value={formData.username}
+            name="user_name"
+            value={formData.user_name}
             onChange={handleChange}
             fullWidth
             required
@@ -71,6 +74,7 @@ const LoginForm = () => {
             fullWidth
             required
           />
+
           {error && <p style={{ color: "red" }}>{error}</p>}
           <SubmitButton
             type="submit"
