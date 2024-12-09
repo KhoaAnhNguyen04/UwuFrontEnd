@@ -15,7 +15,6 @@ const routes = [
   { path: "/friend", component: FriendBox },
   { path: "/membership", component: MemberLayout },
   { path: "/review", component: Review },
-  // { path: "/book/:book_title", component: (props) => <BookPage {...props} /> },
   { path: "/book", component: BookPage },
   { path: "/admin-form", component: UploadForm },
   { path: "/my_book", component: MyBookPage },

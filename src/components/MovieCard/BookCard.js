@@ -78,7 +78,11 @@ const BookCard = (props) => {
           </div>
         </BookCardContainer>
       </BookHoverContainer>
-      <a onClick={() => navigate("/book", { state: { bookId: props.bookId } })}>
+      <a
+        onClick={() =>
+          navigate("/book", { state: { bookId: props.bookId, img: props.img } })
+        }
+      >
         <h4>{props.title} </h4>
       </a>
     </BookLayoutContainer>

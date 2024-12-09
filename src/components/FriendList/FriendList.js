@@ -1,4 +1,4 @@
-import { Avatar, List, ListItem, ListItemAvatar } from "@mui/material";
+import { Avatar, List, ListItem } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import Streak from "./Streak";
@@ -39,6 +39,7 @@ export const FriendItemContainer = styled.div`
     }
   }
 `;
+
 export const AvaContainer = styled.div`
   position: relative;
 `;
@@ -46,34 +47,37 @@ export const AvaContainer = styled.div`
 const FriendItem = (props) => {
   return (
     <FriendItemContainer>
-      <p>1</p>
+      <p>{props.index}</p>
       <AvaContainer>
         <Avatar src={props.avatarRef} />
         <Streak streak={props.streak} />
       </AvaContainer>
       <p>{props.name}</p>
       <div className="img_con">
-        <img src="top2.png" width={"40px"}></img>
+        <img
+          src={props.imgUrl || "top2.png"}
+          width={"40px"}
+          alt="Friend Icon"
+        />
       </div>
     </FriendItemContainer>
   );
 };
+
 const FriendList = ({ data }) => {
   return (
-    <List
-      sx={{
-        width: "100%",
-      }}
-    >
-      <ListItem>
-        <FriendItem streak="5" name="Nguyen Viet Hung"></FriendItem>
-      </ListItem>
-      <ListItem>
-        <FriendItem streak="6" name="Nguyen Anh Khoa"></FriendItem>
-      </ListItem>
-      <ListItem>
-        <FriendItem streak="3" name="Pham Dinh Bao Duy"></FriendItem>
-      </ListItem>
+    <List sx={{ width: "100%" }}>
+      {data.map((friend, index) => (
+        <ListItem key={index}>
+          <FriendItem
+            index={index + 1}
+            avatarRef={friend.avatarRef}
+            name={friend.FriendFullName}
+            streak={friend.streak}
+            imgUrl={friend.imgUrl}
+          />
+        </ListItem>
+      ))}
     </List>
   );
 };

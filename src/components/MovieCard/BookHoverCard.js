@@ -30,7 +30,11 @@ const BookHoverCard = (props) => {
         </div>
         <BookDescriptionLayout>
           <div className="detail_box">
-            <a href={`/book/${props.bookId}`}>
+            <a
+              onClick={() =>
+                navigate("/book", { state: { bookId: props.bookId } })
+              }
+            >
               <h3>{props.title}</h3>
             </a>
             <h4>Jamie</h4>
@@ -47,7 +51,14 @@ const BookHoverCard = (props) => {
             </Button>
           </ButtonsGroup>
           <p>
-            {description} <a href={`/book/${props.bookId}`}>More</a>
+            {description}{" "}
+            <a
+              onClick={() =>
+                navigate("/book", { state: { bookId: props.bookId } })
+              }
+            >
+              More
+            </a>
           </p>
           <a
             onClick={() =>

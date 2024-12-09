@@ -84,7 +84,7 @@ const Review = () => {
   return (
     <ReviewLayout>
       <ReviewBox>
-        <a href="/">
+        <a onClick={() => navigate("/")}>
           <CancelIcon
             sx={{
               fontSize: "24px",

@@ -3,6 +3,8 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import styled from "styled-components";
 import { Avatar, IconButton, List, ListItem } from "@mui/material";
+
+// Styled component for the request item container
 export const RequestItemContainer = styled.div`
   background-color: var(--wheat-color);
   display: flex;
@@ -18,6 +20,7 @@ export const RequestItemContainer = styled.div`
     gap: 16px;
   }
 `;
+
 const RequestItem = (props) => {
   return (
     <RequestItemContainer>
@@ -38,16 +41,18 @@ const RequestItem = (props) => {
     </RequestItemContainer>
   );
 };
-const FriendRequest = () => {
+
+const FriendRequest = ({ data }) => {
   return (
-    <List
-      sx={{
-        width: "100%",
-      }}
-    >
-      <ListItem>
-        <RequestItem name="Khoa Nguyen Anh"></RequestItem>
-      </ListItem>
+    <List sx={{ width: "100%" }}>
+      {data.map((request, index) => (
+        <ListItem key={index}>
+          <RequestItem
+            avatarRef={request.avatarRef}
+            name={request.FriendFullName}
+          />
+        </ListItem>
+      ))}
     </List>
   );
 };

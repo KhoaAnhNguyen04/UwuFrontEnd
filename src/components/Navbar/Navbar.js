@@ -69,7 +69,9 @@ const Navbar = ({ login, setLogin }) => {
                 <MenuBookIcon sx={{ fontSize: 20 }} />
               </Badge>
             </div>
-            <ElementTag href="/my_book">My BookList</ElementTag>
+            <ElementTag onClick={() => navigate("/my_book")}>
+              My BookList
+            </ElementTag>
             <ElementTag>Manage Account</ElementTag>
             <ElementTag onClick={() => setLogin(false)}>Log out</ElementTag>
           </div>
